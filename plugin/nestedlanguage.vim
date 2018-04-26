@@ -1,3 +1,5 @@
+" Credit to the original author of this function (Ivan Tishchenko)
+" http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file
 function EnableNestedLanguage(filetype,start,end,textSnipHl) abort
   let ft=toupper(a:filetype)
   let group='textGroup'.ft
