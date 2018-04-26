@@ -1,11 +1,13 @@
-function CodeSnipFor(language, regex)
-	execute "call EnableNestedLanguage('" . a:language . "', '\c^.*<<\s*" . a:regex . ".*$', '\c^\s*" . a:regex . "\s*$', 'Underlined')"
+function! CodeSnipForSH(language, regex)
+	call EnableNestedLanguage(a:language, '<<-\?\s*' . a:regex . '$', '^' . a:regex . '$', 'Underlined')
 endfunction
 
-call CodeSnipFor('python', 'python')
-call CodeSnipFor('javascript', 'javascript')
-call CodeSnipFor('sh', 'bash')
-call CodeSnipFor('sh', 'sh')
-call CodeSnipFor('awk', 'awk')
-call CodeSnipFor('sed', 'sed')
-call CodeSnipFor('xkb', 'xkb')
+call CodeSnipForSH('sed', 'SED')
+call CodeSnipForSH('awk', 'AWK')
+call CodeSnipForSH('xkb', 'XKB')
+
+call CodeSnipForSH('sh', 'BASH')
+call CodeSnipForSH('perl', 'PERL')
+call CodeSnipForSH('python', 'PYTHON')
+call CodeSnipForSH('javascript', 'JAVASCRIPT')
+
